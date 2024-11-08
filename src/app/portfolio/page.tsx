@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './portfolio.module.css';
 
-type BubbleKey = 'princip' | 'portfolio' | 'we' | 'react' | 'js' | 'pokedex' | 'AmaGames' | 'jeu1' | 'jeu2' | 'jeu3';
+type BubbleKey = 'princip'| 'AmaGames' | 'jeu1' | 'jeu2' | 'jeu3';
 
 type Bubble = {
   name: string;
@@ -16,16 +16,13 @@ const Portfolio = () => {
 
   // Définition des bulles et des sous-bulles
   const bubbles: Record<BubbleKey, Bubble> = {
-    princip: { name: 'Cliquez ici', subBubbles: ['portfolio', 'AmaGames'] },
-    portfolio: { name: 'Portfolio', subBubbles: ['we'] },
+    princip: { name: 'Cliquez ici', subBubbles: ['AmaGames'] },
+
     AmaGames: { name: 'Ama\nGames', subBubbles: ['jeu1', 'jeu2', 'jeu3'] },
     jeu1: { name: 'Jeu 1', subBubbles: [] },
     jeu2: { name: 'Jeu 2', subBubbles: [] },
     jeu3: { name: 'Jeu 3', subBubbles: [] },
-    we: { name: 'WE', subBubbles: ['react', 'js', 'pokedex'] },
-    react: { name: 'React', link: 'https://wetpreact.amadev.fr' },
-    js: { name: 'JS', link: 'https://wejs.amadev.fr' },
-    pokedex: { name: 'Pokedex', link: 'https://pokedex.amadev.fr' },
+
   };
 
   // Variants pour l'animation des bulles
